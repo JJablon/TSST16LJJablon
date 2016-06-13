@@ -1,5 +1,15 @@
-<config>
+<CC>   
+<CC_config>
+	<name>CC_1</name>
 	<address>127.0.0.1</address>
-	<port>2000</port>
+	<port_CC_peer_in>2000</port_CC_peer_in>
+	<port_CC_peer_out>2001</port_CC_peer_out>
+	<port_CC_root_in>2003</port_CC_root_in>
+	<port_CC_root_out>2010</port_CC_root_out>   <!-- - wiele! - -->
+	<port_LRM_out>2005</port_LRM_out>
+	<port_RC_out>2006</port_RC_out>
+	<port_NCC_in>2007</port_NCC_in>
 	<buffer_size>10000</buffer_size>
-</config>
+</CC_config>
+  
+</CC>

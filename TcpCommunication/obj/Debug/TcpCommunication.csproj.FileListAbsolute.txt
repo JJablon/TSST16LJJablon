@@ -10,3 +10,8 @@ E:\Sandbox\TSST\Stage2\TcpCommunication\bin\Debug\TcpCommunication.pdb
 E:\Sandbox\TSST\Stage2\TcpCommunication\obj\Debug\TcpCommunication.csprojResolveAssemblyReference.cache
 E:\Sandbox\TSST\Stage2\TcpCommunication\obj\Debug\TcpCommunication.exe
 E:\Sandbox\TSST\Stage2\TcpCommunication\obj\Debug\TcpCommunication.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\TcpCommunication\bin\Debug\TcpCommunication.exe.config
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\TcpCommunication\bin\Debug\TcpCommunication.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\TcpCommunication\bin\Debug\TcpCommunication.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\TcpCommunication\obj\Debug\TcpCommunication.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\TcpCommunication\obj\Debug\TcpCommunication.pdb

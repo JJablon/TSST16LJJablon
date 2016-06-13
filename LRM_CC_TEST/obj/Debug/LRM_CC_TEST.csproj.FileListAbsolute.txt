@@ -20,3 +20,15 @@ E:\Sandbox\TSST\Stage2\LRM_CC_TEST\bin\Debug\TcpCommunication.pdb
 E:\Sandbox\TSST\Stage2\LRM_CC_TEST\obj\Debug\LRM_CC_TEST.csprojResolveAssemblyReference.cache
 E:\Sandbox\TSST\Stage2\LRM_CC_TEST\obj\Debug\LRM_CC_TEST.exe
 E:\Sandbox\TSST\Stage2\LRM_CC_TEST\obj\Debug\LRM_CC_TEST.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\bin\Debug\LRM_CC_TEST.exe.config
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\bin\Debug\LRM_CC_TEST.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\bin\Debug\LRM_CC_TEST.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\bin\Debug\ControllProtocol.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\bin\Debug\TcpCommunication.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\bin\Debug\ControllProtocol.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\bin\Debug\TcpCommunication.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\obj\Debug\LRM_CC_TEST.csprojResolveAssemblyReference.cache
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\obj\Debug\LRM_CC_TEST.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\LRM_CC_TEST\obj\Debug\LRM_CC_TEST.pdb

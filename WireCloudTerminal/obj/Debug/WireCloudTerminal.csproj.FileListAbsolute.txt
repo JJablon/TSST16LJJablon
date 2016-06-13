@@ -78,3 +78,43 @@ C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\WireCloudTerminal\obj\Debug
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\WireCloudTerminal\obj\Debug\WireCloudTerminal.exe
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\WireCloudTerminal\obj\Debug\WireCloudTerminal.pdb
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\WireCloudTerminal\obj\Debug\WireCloudTerminal.csprojResolveAssemblyReference.cache
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\WireCloudTerminal.exe.config
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\WireCloudTerminal.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\WireCloudTerminal.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\WireCloudTerminal.csprojResolveAssemblyReference.cache
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\App.baml
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\MainWindow.g.cs
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\App.g.cs
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\WireCloudTerminal_MarkupCompile.cache
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\WireCloudTerminal_MarkupCompile.lref
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\MainWindow.baml
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\WireCloudTerminal.g.resources
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\WireCloud.Properties.Resources.resources
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\WireCloudTerminal.csproj.GenerateResource.Cache
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\WireCloudTerminal.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\WireCloudTerminal\obj\Debug\WireCloudTerminal.pdb

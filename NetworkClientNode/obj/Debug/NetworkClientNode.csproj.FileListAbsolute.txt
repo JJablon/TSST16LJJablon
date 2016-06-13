@@ -40,3 +40,23 @@ C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode.csproj.GenerateResource.Cache
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\App.baml
 E:\Sandbox\TSST\Stage2\NetworkClientNode\bin\Debug\NetworkClientNode.exe.config
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\bin\Debug\NetworkClientNode.exe.config
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\bin\Debug\NetworkClientNode.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\bin\Debug\NetworkClientNode.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\bin\Debug\NetworkNode.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\bin\Debug\NetworkNode.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\NetworkClientNode.csprojResolveAssemblyReference.cache
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\App.baml
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\MainWindow.g.cs
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\App.g.cs
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\NetworkClientNode_MarkupCompile.cache
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\NetworkClientNode_MarkupCompile.lref
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\MainWindow.baml
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\NetworkClientNode.g.resources
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\NetworkClientNode.Properties.Resources.resources
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\NetworkClientNode.csproj.GenerateResource.Cache
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\NetworkClientNode.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkClientNode\obj\Debug\NetworkClientNode.pdb

@@ -12,3 +12,8 @@ E:\Sandbox\TSST\Stage2\ControllProtocol\bin\Debug\Newtonsoft.Json.dll
 E:\Sandbox\TSST\Stage2\ControllProtocol\obj\Debug\ControllProtocol.csprojResolveAssemblyReference.cache
 E:\Sandbox\TSST\Stage2\ControllProtocol\obj\Debug\ControllProtocol.exe
 E:\Sandbox\TSST\Stage2\ControllProtocol\obj\Debug\ControllProtocol.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\ControllProtocol\bin\Debug\ControllProtocol.exe.config
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\ControllProtocol\bin\Debug\ControllProtocol.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\ControllProtocol\bin\Debug\ControllProtocol.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\ControllProtocol\obj\Debug\ControllProtocol.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\ControllProtocol\obj\Debug\ControllProtocol.pdb

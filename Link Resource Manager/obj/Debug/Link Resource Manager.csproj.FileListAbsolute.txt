@@ -20,3 +20,15 @@ E:\Sandbox\TSST\Stage2\Link Resource Manager\bin\Debug\TcpCommunication.pdb
 E:\Sandbox\TSST\Stage2\Link Resource Manager\obj\Debug\Link Resource Manager.csprojResolveAssemblyReference.cache
 E:\Sandbox\TSST\Stage2\Link Resource Manager\obj\Debug\Link Resource Manager.exe
 E:\Sandbox\TSST\Stage2\Link Resource Manager\obj\Debug\Link Resource Manager.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\bin\Debug\Link Resource Manager.exe.config
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\bin\Debug\Link Resource Manager.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\bin\Debug\Link Resource Manager.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\bin\Debug\ControllProtocol.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\bin\Debug\TcpCommunication.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\bin\Debug\ControllProtocol.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\bin\Debug\TcpCommunication.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\obj\Debug\Link Resource Manager.csprojResolveAssemblyReference.cache
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\obj\Debug\Link Resource Manager.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\Link Resource Manager\obj\Debug\Link Resource Manager.pdb

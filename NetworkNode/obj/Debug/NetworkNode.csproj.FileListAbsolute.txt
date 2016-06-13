@@ -16,3 +16,10 @@ C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\bin\Debug\Netwo
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\bin\Debug\Newtonsoft.Json.dll
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\bin\Debug\Newtonsoft.Json.xml
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkNode\bin\Debug\NetworkNode.exe.config
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkNode\bin\Debug\NetworkNode.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkNode\bin\Debug\NetworkNode.pdb
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkNode\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkNode\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkNode\obj\Debug\NetworkNode.exe
+C:\Users\Jacek\Desktop\TSST16LNEW\TSST16L_Stage_2\NetworkNode\obj\Debug\NetworkNode.pdb
