@@ -1,0 +1,11 @@
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\bin\Debug\Link Resource Manager.exe.config
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\bin\Debug\Link Resource Manager.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\bin\Debug\Link Resource Manager.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\bin\Debug\ControllProtocol.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\bin\Debug\Newtonsoft.Json.dll
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\bin\Debug\TcpCommunication.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\bin\Debug\ControllProtocol.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\bin\Debug\TcpCommunication.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\obj\Debug\Link Resource Manager.csprojResolveAssemblyReference.cache
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\obj\Debug\Link Resource Manager.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\Link Resource Manager\obj\Debug\Link Resource Manager.pdb

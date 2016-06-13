@@ -1,0 +1,91 @@
+
+===================================================================== CONNECTION REQUEST ====================================================
+
+-------------------Wejscie/wyjscie CC do CC - para snp --------------------------
+{
+	protocol: "request",
+	ends:[{
+			domain: "domain1",
+			node:"client1",
+			port:"1",
+			type: "VC32",
+			VCindex: "1"
+		}, 
+		{
+			domain: "domain3",
+			node:"client2",
+			port:"1",
+			type: "VC32",
+			VCindex: "1"
+		}
+	]
+}
+
+
+
+-------------------------Odpowiedź  CC do CC - subnetwork connection----------------------
+
+{
+	protocol: "request",
+	ends:[{
+			domain: "domain1",
+			node:"client1",
+			port:"1",
+			type: "VC32",
+			VCindex: "1"
+		}, 
+		{
+			domain: "domain3",
+			node:"client2",
+			port:"1",
+			type: "VC32",
+			VCindex: "1"
+		}
+	], 
+	steps: [
+		{
+			domain: null,
+			node: "client1",
+			ports: [1],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{
+			domain: null
+			node: "node2",
+			ports: [1,2],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{	domain: "domain2"
+			node: "node2",
+			ports: [1],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{	domain: "domain2"
+			node: "node3",
+			ports: [3],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{	domain: "domain3"
+			node: "node2",
+			ports: [1],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{	domain: "domain3"
+			node: "node3",
+			ports: [3],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{
+			node: "client2",
+			ports: [1],
+			type: "VC32",
+			VCindex: "1"
+		}
+	]
+}

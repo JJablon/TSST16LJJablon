@@ -1,0 +1,144 @@
+
+===================================================================== ROUTE TABLE QUERY ====================================================
+
+-------------------Żądanie CC do RC --------------------------
+{
+	protocol: "route",
+	domain: "domain1",
+	ends:[{
+			node:"client1",
+			port:"1"                       
+		}, 
+		{
+			node:"client2",
+			port:"1"
+		}
+	]
+}
+
+{
+	protocol: "route",
+	domain: "domain2",
+	ends:[{
+			node:"node2",
+			port:"2"
+		}, 
+		{
+			node:"node4",
+			port:"3"
+		}
+	]
+}
+
+
+-------------------------Odpowiedź  RC do CC----------------------
+
+KLient w innej domenie
+{
+	protocol: "route",
+	ends:[{
+			outerdomain: null
+			node:"client",
+			port:"1",
+			type: "VC32",
+			VCindex: "1"
+		}, 
+		{
+			outerdomain: "b"
+			node:"node4",
+			port:"3"
+			type: "VC32",
+			VCindex: "1"
+		}
+	], 
+	steps: [
+		{
+			domain: null,
+			node: "client1",
+			ports: [1],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{
+			domain: null,
+			node: "node2",
+			ports: [1,2],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{
+			domain: null,
+			node: "node4",
+			ports: [5,3],
+			type: "VC32",
+			VCindex: "1"
+		}
+	]
+}
+
+KLient w tej samej domenie
+{
+	protocol: "route",
+	ends:[{
+			outerdomain: null
+			node:"client1",
+			port:"1",
+			type: "VC32",
+			VCindex: "1"
+		}, 
+		{
+			outerdomain: null
+			node:"client2",
+			port:"1",
+			type: "VC32",
+			VCindex: "1"
+		}
+	], 
+	steps: [
+		{
+			domain: null,
+			node: "client1",
+			ports: [1],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{
+			domain: null
+			node: "node2",
+			ports: [1,2],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{	domain: "domain2"
+			node: "node2",
+			ports: [1],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{	domain: "domain2"
+			node: "node3",
+			ports: [3],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{	domain: "domain3"
+			node: "node2",
+			ports: [1],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{	domain: "domain3"
+			node: "node3",
+			ports: [3],
+			type: "VC32",
+			VCindex: "1"
+		},
+		{
+			node: "client2",
+			ports: [1],
+			type: "VC32",
+			VCindex: "1"
+			
+		}
+	]
+}

@@ -1,0 +1,17 @@
+<Application x:Class="NetworkClientNode.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="ActiveItem" TargetType="{x:Type ListBoxItem}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=Prepared}" Value="false">
+                <Setter Property="Background" Value="Yellow"/>
+            </DataTrigger>
+                <DataTrigger Binding="{Binding Path=Prepared}" Value="true">
+                <Setter Property="Background" Value="LightGreen"/>
+            </DataTrigger>
+        </Style.Triggers>
+        </Style>
+    </Application.Resources>
+</Application>

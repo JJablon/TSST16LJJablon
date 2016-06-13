@@ -1,0 +1,5 @@
+<config>
+	<address>127.0.0.1</address>
+	<port>2000</port>
+	<buffer_size>10000</buffer_size>
+</config>

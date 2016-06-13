@@ -1,0 +1,12 @@
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\obj\Debug\ConnectionConTroller.csprojResolveAssemblyReference.cache
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\obj\Debug\ConnectionConTroller.Form1.resources
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\obj\Debug\ConnectionConTroller.Properties.Resources.resources
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\obj\Debug\ConnectionConTroller.csproj.GenerateResource.Cache
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\bin\Debug\ConnectionConTroller.exe.config
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\bin\Debug\ConnectionConTroller.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\bin\Debug\ConnectionConTroller.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\bin\Debug\Newtonsoft.Json.dll
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\bin\Debug\TcpCommunication.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\bin\Debug\TcpCommunication.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\obj\Debug\ConnectionConTroller.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ConnectionConTroller\obj\Debug\ConnectionConTroller.pdb

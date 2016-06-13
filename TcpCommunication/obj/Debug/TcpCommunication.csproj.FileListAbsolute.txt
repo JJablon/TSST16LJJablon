@@ -1,0 +1,6 @@
+C:\projekty\własne\C# two way communication\TcpCommunication\TcpCommunication\bin\Debug\TcpCommunication.exe.config
+C:\projekty\własne\C# two way communication\TcpCommunication\TcpCommunication\bin\Debug\TcpCommunication.exe
+C:\projekty\własne\C# two way communication\TcpCommunication\TcpCommunication\bin\Debug\TcpCommunication.pdb
+C:\projekty\własne\C# two way communication\TcpCommunication\TcpCommunication\obj\Debug\TcpCommunication.exe
+C:\projekty\własne\C# two way communication\TcpCommunication\TcpCommunication\obj\Debug\TcpCommunication.pdb
+C:\projekty\własne\C# two way communication\TcpCommunication\TcpCommunication\obj\Debug\TcpCommunication.csprojResolveAssemblyReference.cache

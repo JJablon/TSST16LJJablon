@@ -1,0 +1,1 @@
+cd ..\..\ConnectionConTroller\bin\Debug\ & ConnectionConTroller.exe ..\..\..\Configs\CC\1.xml

@@ -1,0 +1,35 @@
+
+===================================================================== PEER COORDINATION ====================================================
+
+-------------------Wejście/wyjście od CC do CC --------------------------
+{
+	protocol: "coordination",
+	ends:[{
+			domain: "domain1",
+			node: "node1",
+			ports: [1,3],
+			type: "VC32",
+			VCindex: "1"
+		}, 
+		{
+		    domain: "domain2",
+			node:"node2",
+			ports: [1,5],
+			type: "VC32",
+			VCindex: "2"
+			
+		}
+	]
+}
+
+
+
+-------------------------Odpowiedź  CC do CC----------------------
+{
+	protocol: "coordination",
+    response: "OK"
+}
+
+
+
+

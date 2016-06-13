@@ -1,0 +1,30 @@
+<lrm-loader>
+	<general-info>
+		<node>node1</node>
+		<domain>domain1</domain>
+	</general-info>
+	<lrm>
+		<id>lrm1</id>
+		<port>1</port>
+		<resource-type>VC3</resource-type>
+		<start-index>0</start-index>
+		<end-index>2</end-index>
+		<z-domain>domain1</z-domain>
+		<a-address>26001</a-address>
+		<z-address>26000</z-address>
+		<a-cc>5000</a-cc>
+		<a-rc>8000</a-rc>
+	</lrm>
+	<lrm>
+		<id>lrm2</id>
+		<port>2</port>
+		<resource-type>VC3</resource-type>
+		<start-index>0</start-index>
+		<end-index>2</end-index>
+		<z-domain>domain1</z-domain>
+		<a-address>26000</a-address>
+		<z-address>26001</z-address>
+		<a-cc>5001</a-cc>
+		<a-rc>8001</a-rc>
+	</lrm>
+</lrm-loader>

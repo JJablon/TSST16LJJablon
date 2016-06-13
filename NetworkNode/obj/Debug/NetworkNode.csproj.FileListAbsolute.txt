@@ -1,0 +1,18 @@
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkNode\bin\Debug\NetworkNode.exe.config
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkNode\bin\Debug\NetworkNode.exe
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkNode\bin\Debug\NetworkNode.pdb
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkNode\bin\Debug\LRM.exe
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkNode\bin\Debug\Newtonsoft.Json.dll
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkNode\bin\Debug\LRM.pdb
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkNode\bin\Debug\Newtonsoft.Json.xml
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkNode\obj\Debug\NetworkNode.exe
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkNode\obj\Debug\NetworkNode.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\bin\Debug\NetworkNode.exe.config
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\obj\Debug\NetworkNode.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\obj\Debug\NetworkNode.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\bin\Debug\NetworkNode.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\bin\Debug\NetworkNode.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\bin\Debug\Newtonsoft.Json.dll
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\bin\Debug\Newtonsoft.Json.xml
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache

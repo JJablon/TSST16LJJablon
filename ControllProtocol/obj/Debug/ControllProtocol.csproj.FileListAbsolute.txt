@@ -1,0 +1,7 @@
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ControllProtocol\bin\Debug\ControllProtocol.exe.config
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ControllProtocol\bin\Debug\ControllProtocol.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ControllProtocol\bin\Debug\ControllProtocol.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ControllProtocol\obj\Debug\ControllProtocol.csprojResolveAssemblyReference.cache
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ControllProtocol\obj\Debug\ControllProtocol.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ControllProtocol\obj\Debug\ControllProtocol.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\ControllProtocol\bin\Debug\Newtonsoft.Json.dll

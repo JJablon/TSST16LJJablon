@@ -1,0 +1,33 @@
+
+===================================================================== LINK CONNECTION REQUEST ====================================================
+
+-------------------------wiadomosc od  CC do LRM ----------------------
+{
+	protocol: "link_conn_req",
+}
+
+
+
+
+------------------- odpowiedz dla CC od LRM - para SNP (link connection) --------------------------
+{
+	protocol: "link_conn_req",
+	ends:[{
+			domain: "domain1",
+			node:"client1",
+			port:"1",
+			type: "VC32",
+			VCindex: "1"
+		}, 
+		{
+			domain: "domain3",
+			node:"client2",
+			port:"1",
+			type: "VC32",
+			VCindex: "1"
+		}
+	]
+}
+
+
+

@@ -1,0 +1,44 @@
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\bin\Debug\SDHManagement.exe.config
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\bin\Debug\SDHManagement.exe
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\bin\Debug\SDHManagement.pdb
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\SDHManagement.csprojResolveAssemblyReference.cache
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\AdditionalWindows\AddConnectionWindow.g.cs
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\AdditionalWindows\AddNewRouterWindow.g.cs
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\AdditionalWindows\DropConnectionWindow.g.cs
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\AdditionalWindows\ResourceRelocationWindow.g.cs
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\MainWindow.g.cs
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\App.g.cs
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\SDHManagement_MarkupCompile.cache
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\SDHManagement_MarkupCompile.lref
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\AdditionalWindows\AddConnectionWindow.baml
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\AdditionalWindows\AddNewRouterWindow.baml
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\AdditionalWindows\DropConnectionWindow.baml
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\AdditionalWindows\ResourceRelocationWindow.baml
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\MainWindow.baml
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\SDHManagement.g.resources
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\SDHManagement.Properties.Resources.resources
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\SDHManagement.csproj.GenerateResource.Cache
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\SDHManagement.exe
+C:\projekty\uczelnia\TSST\Hierarchy Setup\SDHManagement\obj\Debug\SDHManagement.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\bin\Debug\SDHManagement.exe.config
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\bin\Debug\SDHManagement.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\bin\Debug\SDHManagement.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\AdditionalWindows\AddConnectionWindow.g.cs
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\AdditionalWindows\AddNewRouterWindow.g.cs
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\AdditionalWindows\DropConnectionWindow.g.cs
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\AdditionalWindows\ResourceRelocationWindow.g.cs
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\MainWindow.g.cs
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\App.g.cs
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\SDHManagement_MarkupCompile.cache
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\SDHManagement_MarkupCompile.lref
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\AdditionalWindows\AddConnectionWindow.baml
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\AdditionalWindows\AddNewRouterWindow.baml
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\AdditionalWindows\DropConnectionWindow.baml
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\AdditionalWindows\ResourceRelocationWindow.baml
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\MainWindow.baml
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\SDHManagement.g.resources
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\SDHManagement.Properties.Resources.resources
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\SDHManagement.csproj.GenerateResource.Cache
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\SDHManagement.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\SDHManagement.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\SDHManagement\obj\Debug\SDHManagement.csprojResolveAssemblyReference.cache

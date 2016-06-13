@@ -1,0 +1,11 @@
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\bin\Debug\LRM_CC_TEST.exe.config
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\bin\Debug\LRM_CC_TEST.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\bin\Debug\LRM_CC_TEST.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\bin\Debug\ControllProtocol.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\bin\Debug\Newtonsoft.Json.dll
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\bin\Debug\TcpCommunication.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\bin\Debug\ControllProtocol.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\bin\Debug\TcpCommunication.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\obj\Debug\LRM_CC_TEST.csprojResolveAssemblyReference.cache
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\obj\Debug\LRM_CC_TEST.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\LRM_CC_TEST\obj\Debug\LRM_CC_TEST.pdb

@@ -1,0 +1,41 @@
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\bin\Debug\NetworkClientNode.exe.config
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\bin\Debug\NetworkClientNode.exe
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\bin\Debug\NetworkClientNode.pdb
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\bin\Debug\LRM.exe
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\bin\Debug\NetworkNode.exe
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\bin\Debug\Newtonsoft.Json.dll
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\bin\Debug\LRM.pdb
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\bin\Debug\NetworkNode.pdb
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\bin\Debug\Newtonsoft.Json.xml
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\NetworkClientNode.csprojResolveAssemblyReference.cache
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\MainWindow.g.cs
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\App.g.cs
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\NetworkClientNode_MarkupCompile.cache
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\NetworkClientNode_MarkupCompile.lref
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\MainWindow.baml
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\NetworkClientNode.g.resources
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\NetworkClientNode.Properties.Resources.resources
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\NetworkClientNode.csproj.GenerateResource.Cache
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\NetworkClientNode.exe
+C:\projekty\uczelnia\TSST\Hierarchy Setup\NetworkClientNode\obj\Debug\NetworkClientNode.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\bin\Debug\NetworkClientNode.exe.config
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\bin\Debug\NetworkClientNode.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\bin\Debug\NetworkClientNode.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\bin\Debug\NetworkNode.exe
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\bin\Debug\Newtonsoft.Json.dll
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\bin\Debug\NetworkNode.pdb
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\bin\Debug\Newtonsoft.Json.xml
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode.csprojResolveAssemblyReference.cache
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\MainWindow.g.cs
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\App.g.cs
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode_MarkupCompile.cache
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode_MarkupCompile.lref
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\MainWindow.baml
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode.g.resources
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode.Properties.Resources.resources
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode.csproj.GenerateResource.Cache
+C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\App.baml
