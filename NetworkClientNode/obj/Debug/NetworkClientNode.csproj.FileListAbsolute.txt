@@ -39,3 +39,4 @@ C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode.Properties.Resources.resources
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\NetworkClientNode.csproj.GenerateResource.Cache
 C:\projekty\uczelnia\TSST\16L\Etap pierwszy\TSST SDH\NetworkClientNode\obj\Debug\App.baml
+E:\Sandbox\TSST\Stage2\NetworkClientNode\bin\Debug\NetworkClientNode.exe.config

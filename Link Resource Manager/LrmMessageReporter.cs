@@ -1,4 +1,6 @@
-﻿using Link_Resource_Manager.communication;
+﻿using ControllProtocol.protocol;
+using ControllProtocol.topology;
+using Link_Resource_Manager.communication;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -103,6 +105,58 @@ namespace Link_Resource_Manager
                 }
             });
 
+        }
+
+        public void ReportAllocRequest(LinkConnectionRequest request) 
+        {
+            ReportMainSeparator();
+            IntroduceLrm();
+            ReportSmallSeparator();
+            Console.WriteLine("SNP LINK CONNECTION REQUEST");
+            ReportCcReq(request);
+            ReportMainSeparator();
+        }
+
+        public void ReportDeallocRequest(LinkConnectionRequest request)
+        {
+            ReportMainSeparator();
+            IntroduceLrm();
+            
+            ReportSmallSeparator();
+            Console.WriteLine("SNP LINK CONNECTION DEALLOCATION");
+            ReportCcReq(request);
+
+            ReportSmallSeparator();
+            ReportSnp(request.Snpp[0]);
+            ReportMainSeparator();
+        }
+
+        private void ReportCcReq(LinkConnectionRequest request)
+        {
+            Console.WriteLine("REQUEST ID: " + request.RequestId);
+        }
+
+        private void ReportSnp(SNP snp) 
+        {
+            Console.WriteLine("SNP:");
+            string snpMsg = 
+                string.Format("node: [{0}], port: [{1}], type: [{2}], vcIndex: [{3}]",
+                snp.node,
+                snp.port,
+                ResourcesType,
+                snp.VcIndex);
+            Console.WriteLine("\t" + snpMsg);
+        }
+
+
+        private void ReportMainSeparator()
+        {
+            Console.WriteLine("=========================================================");
+        }
+
+        private void ReportSmallSeparator()
+        {
+            Console.WriteLine("-----------");
         }
 
 

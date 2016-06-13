@@ -33,7 +33,7 @@ namespace LRM_CC_TEST
             while (true)
             {
                 Console.WriteLine("ALLOCATION");
-                string textToSend = Console.ReadLine();
+                Console.ReadLine();
                 LinkConnectionRequest req = new LinkConnectionRequest();
                 req.RequestId = "A1";
                 req.Protocol = "ALLOCATION";
@@ -44,6 +44,22 @@ namespace LRM_CC_TEST
                 req.Snpp = snpp;
                 string alloc = JsonConvert.SerializeObject(req);
                 endpoint.Send(alloc);
+                Console.WriteLine("DEALLOC?['y'/everything but 'y']");
+                string delloc = Console.ReadLine();
+                if (delloc.ToUpper().Equals("Y"))
+                {
+                    Console.WriteLine("TELL INDEX [NUMBER]");
+                    string indexToDelloc = Console.ReadLine();
+                    int index = int.Parse(indexToDelloc);
+                    LinkConnectionRequest dellocReq = new LinkConnectionRequest();
+                    dellocReq.RequestId = "D1";
+                    dellocReq.Protocol = "DEALLOCATION";
+                    List<SNP> snppD = new List<SNP>();
+                    snppD.Add(new SNP("node1", 1, "domian1", "VC3", index));
+                    dellocReq.Snpp = snppD;
+                    string dealloc = JsonConvert.SerializeObject(dellocReq);
+                    endpoint.Send(dealloc);
+                }
             }
 
         }

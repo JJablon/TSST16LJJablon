@@ -224,7 +224,7 @@ namespace TcpCommunication.Impl.TcpNetImp
         private List<string> ExtractsMessages(string incomeTcpBunch, string start, string end)
         {
             string complexSeparator = end + start;
-            string[] messages = incomeTcpBunch.Split(complexSeparator.ToCharArray());
+            string[] messages = incomeTcpBunch.Split(new string[] { complexSeparator }, StringSplitOptions.None);
             messages[0] = messages[0].Replace(start, "");
             messages[messages.Length - 1] = messages[messages.Length - 1].Replace(end, "");
             return new List<string>(messages);

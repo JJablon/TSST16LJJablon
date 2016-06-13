@@ -63,7 +63,7 @@ namespace Link_Resource_Manager.communication
         private void TranslateCcData(object sender, string data)
         {
             LinkConnectionRequest req = JsonConvert.DeserializeObject<LinkConnectionRequest>(data);
-            CC_PROTOCOLS protocol = DetectCcProtocol(data);
+            CC_PROTOCOLS protocol = DetectCcProtocol(req.Protocol);
             switch (protocol)
             {
                 case CC_PROTOCOLS.ALLOCATION:

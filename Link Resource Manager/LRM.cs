@@ -60,6 +60,7 @@ namespace Link_Resource_Manager
         private void AllocateResources(object sender, LinkConnectionRequest request)
         {
             List<SNP> snpp = new List<SNP>();
+            Reporter.ReportAllocRequest(request);
 
             if (NeighborDomian.Equals(Domian))
             {
@@ -68,6 +69,14 @@ namespace Link_Resource_Manager
                 {
                     SNP snp = new SNP(NodeName, PortNumber, Domian, ResourcesType, resourceIndex);
                     snpp.Add(snp);
+                }
+                else
+                {
+                    
+                    ResourceResponse resp = new ResourceResponse();
+                    resp.RequestId = request.RequestId;
+                    resp.SnpPair = new List<SNP>();
+                    LrmaComm.SendAllocationResponse(resp);
                 }
             }
             else
@@ -97,6 +106,7 @@ namespace Link_Resource_Manager
 
         private void DeallocateResources(object sender, LinkConnectionRequest request)
         {
+            Reporter.ReportDeallocRequest(request);
             SNP releaseSnp = request.Snpp[0];
             LinkConnectionRequest releaseRequest = new LinkConnectionRequest();
             releaseRequest.Protocol = LRM_PROTOCOLS.RELEASE.ToString();
@@ -136,8 +146,8 @@ namespace Link_Resource_Manager
             LinkConnectionReleaseResp ccResp = new LinkConnectionReleaseResp();
             ccResp.Confirmation = response.Confirmed;
             ccResp.ReleasedSnpp = new List<SNP>();
-            ccResp.ReleasedSnpp.Add(response.RequestedSnp);
-            ccResp.ReleasedSnpp.Add(response.Snp);
+            if (response.RequestedSnp != null) ccResp.ReleasedSnpp.Add(response.RequestedSnp);
+            if (response.Snp != null) ccResp.ReleasedSnpp.Add(response.Snp);
             LrmaComm.SendDeallocationResp(ccResp);
         }
 

@@ -4,3 +4,9 @@ C:\projekty\własne\C# two way communication\TcpCommunication\TcpCommunication\b
 C:\projekty\własne\C# two way communication\TcpCommunication\TcpCommunication\obj\Debug\TcpCommunication.exe
 C:\projekty\własne\C# two way communication\TcpCommunication\TcpCommunication\obj\Debug\TcpCommunication.pdb
 C:\projekty\własne\C# two way communication\TcpCommunication\TcpCommunication\obj\Debug\TcpCommunication.csprojResolveAssemblyReference.cache
+E:\Sandbox\TSST\Stage2\TcpCommunication\bin\Debug\TcpCommunication.exe.config
+E:\Sandbox\TSST\Stage2\TcpCommunication\bin\Debug\TcpCommunication.exe
+E:\Sandbox\TSST\Stage2\TcpCommunication\bin\Debug\TcpCommunication.pdb
+E:\Sandbox\TSST\Stage2\TcpCommunication\obj\Debug\TcpCommunication.csprojResolveAssemblyReference.cache
+E:\Sandbox\TSST\Stage2\TcpCommunication\obj\Debug\TcpCommunication.exe
+E:\Sandbox\TSST\Stage2\TcpCommunication\obj\Debug\TcpCommunication.pdb
