@@ -37,10 +37,10 @@ namespace ConnectionController
             listener1.AssignDataReceivedListener((object sende, string content) =>
             {
                 show(content);
-                Containers.LinkConnectionRequestResponse lcrr = new Containers.LinkConnectionRequestResponse();
-                lcrr.ends.Add(new Containers.SNP("node1", 12, "domain1", "VC32", 1));
+               /* Containers.LinkConnectionRequestResponse lcrr = new Containers.LinkConnectionRequestResponse();
+                lcrr.ends.Add(new SNP("node1", 12, "domain1", "VC32", 1));
                 listener1.Send(JsonConvert.SerializeObject(lcrr));
-
+                */
 
             });
             listener1.AssignConnectionListener((object sender) => Console.WriteLine("Połączono z LRM"));

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 using CCConf;
 using System.Threading.Tasks;
+using ControllProtocol.protocol;
+using ControllProtocol.topology;
 using TcpCommunication;
+using Newtonsoft.Json;
 namespace ConnectionConTroller
 {
     public class EndpointAddressPair
@@ -51,8 +54,6 @@ namespace ConnectionConTroller
         }
     }
 
-    
-
     public delegate void ConnectionRequestHandler(object sender, SocketEventArgs e);
     public delegate void PeerCoordinationHandler(object sender, SocketEventArgs e);
     public delegate void NCCConnectionRequestHandler(object sender, SocketEventArgs e);
@@ -60,10 +61,12 @@ namespace ConnectionConTroller
     public delegate void RouteTableQueryHandler(object sender, SocketEventArgs e);
     public delegate void LinkConnectionRequestHandler(object sender, SocketEventArgs e);
   
+
     public class CommunicatonModule
     {
 
 
+        Thread LRMThread;
         protected virtual void OnConnectionRequest(SocketEventArgs e)
         {
             if (ConnectionRequest != null)
@@ -141,6 +144,12 @@ namespace ConnectionConTroller
 
         public void RunListeners()
         {
+
+            try
+            {
+                ((IListenerEndpoint)(nccIn.endpoint)).Listen(nccIn.address);
+            }
+            catch (Exception e) { Console.WriteLine(e.ToString()); }
             try
             {
                 ((IListenerEndpoint)(peerIn.endpoint)).Listen(peerIn.address);
@@ -154,11 +163,7 @@ namespace ConnectionConTroller
             }
             catch (Exception e) { Console.WriteLine(e.ToString()); }
 
-            try
-            {
-                ((IListenerEndpoint)(nccIn.endpoint)).Listen(nccIn.address);
-            }
-            catch (Exception e) { Console.WriteLine(e.ToString()); }
+       
         }
 
         private void prepareListeners(CC_configs.CCConfig config)
@@ -248,8 +253,8 @@ namespace ConnectionConTroller
             peerOut = new EndpointAddressPair(factory.PrepareClientConnectionEndpoint(), factory.GetAddress(config.address, config.portPeerOut));
             lrmOut = new EndpointAddressPair(factory.PrepareClientConnectionEndpoint(), factory.GetAddress(config.address, config.portLrmOut));
             rcOut = new EndpointAddressPair(factory.PrepareClientConnectionEndpoint(), factory.GetAddress(config.address, config.portRcOut));
-          
 
+            LRMThread = new Thread(new ThreadStart(RunLRMThread));
 
 
             peerOut.endpoint.AssignConnectionLostListener((object o) =>
@@ -312,24 +317,38 @@ namespace ConnectionConTroller
 
 
 
+        private void RunLRMThread()
+        {
 
+            Console.WriteLine("ALLOCATION");
+            LinkConnectionRequest req = new LinkConnectionRequest();
+            req.RequestId = "A1";
+            req.Protocol = "ALLOCATION";
+            List<SNP> snpp = new List<SNP>();
+            snpp.Add(new SNP("node1", 1, "domian1", "VC3", 0));
+            snpp.Add(new SNP("node1", 1, "domian1", "VC3", 1));
+            snpp.Add(new SNP("node1", 1, "domian1", "VC3", 2));
+            req.Snpp = snpp;
+            string alloc = JsonConvert.SerializeObject(req);
+
+            ((IClientEndpoint)(lrmOut.endpoint)).Send(alloc);
+        }
         public void RunClients()
         {
 
 
             // todo : multiple rootout!
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ((TcpCommunication.IClientEndpoint)(peerOut.endpoint)).Connect(peerOut.address);
+            //((TcpCommunication.IClientEndpoint)(peerOut.endpoint)).Connect(peerOut.address);
             ((TcpCommunication.IClientEndpoint)(lrmOut.endpoint)).Connect(lrmOut.address);
-            ((TcpCommunication.IClientEndpoint)(rcOut.endpoint)).Connect(rcOut.address);
+            //((TcpCommunication.IClientEndpoint)(rcOut.endpoint)).Connect(rcOut.address);
 
             
         }
 
         public void LRMLinkConnectionRequest()
         {
-            lrmOut.endpoint.Send("{    \"protocol\": \"link_conn_req\"}");
-
+            LRMThread.Start();
         }
 
 

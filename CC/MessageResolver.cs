@@ -2,6 +2,8 @@
 using System.Text;
 using System.IO;
 using Newtonsoft.Json;
+using ControllProtocol.protocol;
+using ControllProtocol.topology;
 namespace ConnectionConTroller
 {
     static class MessageResolver
@@ -10,12 +12,12 @@ namespace ConnectionConTroller
         
         public static object Resolve(CommunicatonModule sender, string data, TcpCommunication.IConnectionEndpoint l)
         {
-            object obj;
+            object obj = null;
             #region ustalenie styku przed parsowanei json
             string protocol = null;
-            if (data.IndexOf("protocol") == -1) { throw new InvalidDataException(); }
-            else
-            {
+            //if (data.IndexOf("protocol") == -1) { throw new InvalidDataException(); }
+           // else
+            //{
                 try
                 {
                     int position0 = data.IndexOf(":");
@@ -33,51 +35,82 @@ namespace ConnectionConTroller
                     throw new InvalidDataException();
                 }
                 #endregion
+            if(protocol[0] == 'A')
+            {
+                Containers.LinkConnectionRequestResponse lcr = JsonConvert.DeserializeObject<Containers.LinkConnectionRequestResponse>(data);
+                sender.Write("\tODPOWIEDZ OD LRM NA LINK CONN REQUEST, końce: ");
+
+                foreach (var end in lcr.SnpPair)
+                {
+                    sender.Write("\t \t węzeł: " + end.node + " ,port: " + end.port + " ,domena: " + end.Domain + " ,parentVC: " + end.ParentVcIndex + ", indexVC: " + end.VcIndex);
+                }
+                obj = lcr;
+
+
+
+                return obj;
+            }
+            else if (protocol[1]== 'D')
+            {
+                Containers.LinkConnectionRequestResponse lcr = JsonConvert.DeserializeObject<Containers.LinkConnectionRequestResponse>(data);
+                sender.Write("\tODPOWIEDZ OD LRM NA LINK CONN DEALLOCATION, końce: ");
+
+                foreach (var end in lcr.SnpPair)
+                {
+                    sender.Write("\t \t węzeł: " + end.node + " ,port: " + end.port + " ,domena: " + end.Domain + " ,parentVC: " + end.ParentVcIndex + ", indexVC: " + end.VcIndex);
+                }
+                obj = lcr;
+
+
+
+
+                return obj;
+            }
                 switch (protocol)
                 {
                     case "route":
-                        Containers.RouteTableQuery rtq = JsonConvert.DeserializeObject<Containers.RouteTableQuery>(data);
+                       /*  Containers.RouteTableQuery rtq = JsonConvert.DeserializeObject<Containers.RouteTableQuery>(data);
 
-                        sender.Write("\tŻĄDANIE: ROUTE TABLE QUERY, domena: " + rtq.domain + ", końce: ");
+                        sender.Write("\tŻĄDANIE: ROUTE TABLE QUERY,  końce: ");
                         foreach (var end in rtq.ends)
                         {
                             sender.Write("\t \t węzeł: " + end.node + " port: " + end.port);
                         }
-                        obj = rtq;
-                        /*
-                       sender.Write("\tODPOWIEDŹ:");
+                        obj = rtq;*/
+                                                                    /*
+                                                                   sender.Write("\tODPOWIEDŹ:");
 
-                        SNPPSet snpps = new SNPPSet(protocol);
-                        snpps.protocol = protocol;
-                        snpps.ends.Add(new EndSimple("node1", 1000));
+                                                                    SNPPSet snpps = new SNPPSet(protocol);
+                                                                    snpps.protocol = protocol;
+                                                                    snpps.ends.Add(new EndSimple("node1", 1000));
 
-                        snpps.steps.Add(new SNPP("domain2", "VC32", 1, "node2", new int[] { 1, 2, 3 }));
+                                                                    snpps.steps.Add(new SNPP("domain2", "VC32", 1, "node2", new int[] { 1, 2, 3 }));
 
-                        var reply = JsonConvert.SerializeObject(snpps);
-                        sender.Write("\t" + reply);
+                                                                    var reply = JsonConvert.SerializeObject(snpps);
+                                                                    sender.Write("\t" + reply);
                         
-                        sender.Write("");*/
+                                                                    sender.Write("");*/
                         break;
 
                     case "request":
                         Containers.ConnectionRequest cr = JsonConvert.DeserializeObject<Containers.ConnectionRequest>(data);
                         sender.Write("\tŻĄDANIE: CONN REQUEST, końce: ");
-                        foreach (var end in cr.ends)
+                        foreach (var end in cr.Ends)
                         {
-                            sender.Write("\t \t węzeł: " + end.node + " ,port: " + end.port + " ,domena: " + end.domain + " ,typ: " + end.type + ", indexVC: " + end.VCindex);
+                            sender.Write("\t \t węzeł: " + end.node + " ,port: " + end.port + " ,domena: " + end.Domain + " ,parentindex: " + end.ParentVcIndex + ", indexVC: " + end.VcIndex);
                         }
                         obj = cr;
-                        /*
-                        sender.Write("\tODPOWIEDŹ:");
+                                                                    /*
+                                                                    sender.Write("\tODPOWIEDŹ:");
 
-                        SubnetworkConnection snc = new SubnetworkConnection(protocol);
-                        snc.protocol = protocol;
-                        snc.ends.Add(new EndSimple("node1", 1000));
-                        snc.steps.Add(new SNPP("domain2", "VC32", 1, "node2", new int[] { 1, 2, 3 }));
-                        var reply1 = JsonConvert.SerializeObject(snc);
-                        sender.Write(" \t " + reply1);
+                                                                    SubnetworkConnection snc = new SubnetworkConnection(protocol);
+                                                                    snc.protocol = protocol;
+                                                                    snc.ends.Add(new EndSimple("node1", 1000));
+                                                                    snc.steps.Add(new SNPP("domain2", "VC32", 1, "node2", new int[] { 1, 2, 3 }));
+                                                                    var reply1 = JsonConvert.SerializeObject(snc);
+                                                                    sender.Write(" \t " + reply1);
 
-                        */
+                                                                    */
                         
 
 
@@ -96,11 +129,11 @@ namespace ConnectionConTroller
                             sender.Write("\t \t węzeł: " + end.node + " ,port: " + sb.ToString() + " ,domena: " + end.domain + " ,typ: " + end.type + ", indexVC: " + end.VCindex);
                         }
                         obj = pair;
-                        /*
-                        sender.Write("\tODPOWIEDŹ:");
-                        var reply2 = "{protocol: \"coordination\", response:\"ok\"}";
-                        sender.Write(" \t " + reply2);
-                        */
+                                                                        /*
+                                                                        sender.Write("\tODPOWIEDŹ:");
+                                                                        var reply2 = "{protocol: \"coordination\", response:\"ok\"}";
+                                                                        sender.Write(" \t " + reply2);
+                                                                        */
                         
 
                         sender.Write("");
@@ -108,32 +141,36 @@ namespace ConnectionConTroller
 
 
 
-
-                    case "link_conn_req":
+/*
+                    case "A1":
                         
-                       Containers.LinkConnectionRequestResponse lcr = JsonConvert.DeserializeObject<Containers.LinkConnectionRequestResponse>(data);
+                      LinkConnectionRequest lcr = JsonConvert.DeserializeObject<LinkConnectionRequest>(data);
                         sender.Write("\tODPOWIEDZ OD LRM NA LINK CONN REQUEST, końce: ");
 
-
-
-                        
-                       
-                        foreach (var end in lcr.ends)
+                        foreach (var end in lcr.Snpp)
                         {
-                        sender.Write("\t \t węzeł: " + end.node + " ,port: " + end.port + " ,domena: " + end.domain + " ,typ: " + end.type + ", indexVC: " + end.VCindex);
+                        sender.Write("\t \t węzeł: " + end.node + " ,port: " + end.port + " ,domena: " + end.Domain + " ,parentVC: " + end.ParentVcIndex + ", indexVC: " + end.VcIndex);
                         }
-
+                        obj = lcr;
                         break;
-
+                        */
                     default:
-                        sender.Write("nieznane polecenie: " + protocol);
+                    try
+                    {
+                        HigherLevelConnectionRequest request = JsonConvert.DeserializeObject<HigherLevelConnectionRequest>(data);
+                        return request;
+
+                    }
+                    catch (Exception) {
+                        // sender.Write("nieznane polecenie: " + protocol);
                         obj = null;
-                        break;
+                        return null;
+                    }
 
                 }
 
-            }
-            return null;
+            //}
+            return obj;
 
 
 

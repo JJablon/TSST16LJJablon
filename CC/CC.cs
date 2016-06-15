@@ -1,20 +1,20 @@
 ﻿using System;
-using System.IO;
-using System.Threading;
-using System.Text;
-using Newtonsoft.Json;
 using System.Collections.Generic;
+using ControllProtocol.topology;
+using ControllProtocol.protocol;
+using Newtonsoft.Json;
 namespace ConnectionConTroller
 {
-
-   
     public class CC
     {
         const bool DEBUG = true;
         private string name;
         private CommunicatonModule cm;
-        //0113
+        
+        public Dictionary<string, NetworkConnection> Connections;
         private bool clients_run=false, listeners_run=false;
+        public string Domain { get; set; }
+
         public void RunClients()
         {
             if (!clients_run)
@@ -44,6 +44,8 @@ namespace ConnectionConTroller
             cm.LinkConnectionRequest += new LinkConnectionRequestHandler(linkConnReq);
         }
 
+
+        
         public void SendLinkConnectionRequest()
         {
             cm.LRMLinkConnectionRequest();
@@ -58,28 +60,111 @@ namespace ConnectionConTroller
         {
             Console.WriteLine("Odpowiedź od LRM (styk link conn req) :");
             Containers.LinkConnectionRequestResponse response = ((Containers.LinkConnectionRequestResponse)(e.content));
-            //try {
+            try
+            {
                 int a = 0;
                 
-                foreach (var end in response.ends) 
-                    Console.WriteLine("KONCOWKA nr. "+ ++a +": domena: " + end.domain + " węzeł " + end.node + " port : " + end.port + " typ: " + end.type + " indexkonteneru: " + end.VCindex);
+                foreach (var end in response.SnpPair) 
+                    Console.WriteLine("KONCOWKA nr. "+ ++a +": domena: " + end.Domain+ " węzeł " + end.node + " port : " + end.port + " indexparent: " + end.ParentVcIndex + " indexkonteneru: " + end.VcIndex);
 
-               // }
-           // catch (Exception err )
-           // {
-             //   Console.WriteLine(err.Message);
-           // }
+              }
+           catch (Exception err )
+           {
+                Console.WriteLine(err.ToString());
+            }
         }
 
         private void routeTableQuery(object sender, SocketEventArgs e)
         {
             throw new NotImplementedException();
         }
-        
+      
         private void nCCConnReq(object sender, SocketEventArgs e)
         {
-            throw new NotImplementedException();
+            //Console.WriteLine(e.content);
+            HigherLevelConnectionRequest request = ((HigherLevelConnectionRequest)(e.content));
+
+            try
+            {
+                switch (request.Type)
+                {
+                    case "connection-request":
+                        {
+                            NccConnectionRequest(request,sender);
+                            return;
+                        }
+                    case "call-teardown":
+                        {
+                            CallTeardown(request);
+                            return;
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
+        private void NccConnectionRequest(HigherLevelConnectionRequest request,object socket)
+        {
+            //ConsoleLogger.PrintConnectionRequest(request);
+            NetworkConnection actual = new NetworkConnection();
+                actual.End1 = new EndSimple(request.Src.node, request.Src.port);
+                actual.End2 = new EndSimple(request.Dst.node, request.Dst.port);
+                actual.AllSteps = new List<ConnectionStep>();
+            
+
+            if (request.Id != null)
+            {
+                string[] reqParts = request.Id.Split('|');
+                actual.Id = reqParts[0];
+                actual.MySubconnectionId = reqParts[1];
+            }
+            else
+            {
+                actual.Id = GenerateConnectionId(request);
+            }
+
+            Connections.Add(actual.Id, actual);
+
+            if (socket != null)
+            {
+                actual.PeerCoordination =  (TcpCommunication.IListenerEndpoint) socket;
+            }
+
+            List<EndSimple> ends = new List<EndSimple>();
+
+            ends.Add(new EndSimple(request.Src.node, request.Src.port));
+            ends.Add(new EndSimple(request.Dst.node, request.Dst.port));
+
+
+            Containers.SimpleConnection sc = new Containers.SimpleConnection(actual.Id, "route", ends, this.Domain);
+           
+           // ConsoleLogger.PrintRouteTableQuery(sc);
+            //RcSender.SendToRc(JsonConvert.SerializeObject(sc));            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    TODO
+        }
+        private string GenerateConnectionId(HigherLevelConnectionRequest request)
+        {
+            return request.Src.node+ request.Src.port + request.Dst.node + request.Dst.port;
+        }
+
+        private void CallTeardown(HigherLevelConnectionRequest request)
+        {
+            string id = request.Id == null ? GenerateConnectionId(request) : request.Id.Split('|')[0];
+
+            if (!Connections.ContainsKey(id))
+            {
+                LrmSnp tmp = request.Src;
+                request.Src = request.Dst;
+                request.Dst = tmp;
+
+                id = GenerateConnectionId(request);
+            }
+
+            NetworkConnection actual = Connections[id];
+           // SendConnectionReq(actual.ActualLevelConnection, ReqType.DISCONNECTION_REQUEST);         //          TODO
+        }
+
 
         private void peerCoord(object sender, SocketEventArgs e)
         {
