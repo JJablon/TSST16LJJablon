@@ -112,7 +112,7 @@ namespace ConnectionConTroller
                 [XmlAttribute]
                 public string domain { get; set; }
                [XmlAttribute]
-               public typ type { get; set; }
+               public string type { get; set; }
 
                 
                 public Domain() { }

@@ -12,12 +12,12 @@
 	<port_NCC_in>2007</port_NCC_in>
 	<buffer_size>10000</buffer_size>
 	
-	<domains CC_port="10000" domain="domain2" type="0" /> <!-- type=0 to subdomena-->
-	<domains CC_port="10001" domain="domain3" type="0" />
-	<domains CC_port="10002" domain="domain4" type="0" />
-	<domains CC_port="10010" domain="domain2" type="1"/> <!--type=1 to peer domena-->
-	<domains CC_port="10011" domain="domain3" type="1"/>
-	<domains CC_port="10012" domain="domain4" type="1"/>
+	<domains CC_port="10000" domain="domain3" type="sub" /> 
+	<domains CC_port="10001" domain="domain3" type="sub" />
+	<domains CC_port="10002" domain="domain4" type="sub" />
+	<domains CC_port="10010" domain="domain2" type="peer"/> 
+	<domains CC_port="10011" domain="domain3" type="peer"/>
+	<domains CC_port="10012" domain="domain4" type="peer"/>
 </CC_config>
   
 </CC>
