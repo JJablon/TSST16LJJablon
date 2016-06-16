@@ -18,8 +18,8 @@ namespace ConnectionConTroller
     }
     public class NetworkConnection
     {
-        public EndSimple End1 { get; set; }
-        public EndSimple End2 { get; set; }
+        public LrmDestination End1 { get; set; }
+        public LrmDestination End2 { get; set; }
         public string Id { get; set; }
         public string MySubconnectionId { get; set; }
         public IListenerEndpoint PeerCoordination { get; set; }
@@ -52,12 +52,20 @@ namespace ConnectionConTroller
         public List<Port> Ports { get; set; }
     }
 
-    public class LrmSnp : EndSimple
-    {
-        public string Index { get; set; }
-        public LrmSnp(string node, int port, string index) : base(node, port) { this.node = node; this.port = port; this.Index = index; }
-    }
-    public class Port
+  
+        public class LrmDestination
+        {
+            public string Name { get; set; }
+            public string Port { get; set; }
+            public string Domena { get; set; }
+            public string Index { get; set; }
+        }
+
+        public class LrmSnp : LrmDestination
+        {
+            //public string Index { get; set; }
+        }
+        public class Port
     {
         public string Number { get; set; }
         public string Index { get; set; }

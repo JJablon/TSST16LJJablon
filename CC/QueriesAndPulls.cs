@@ -35,9 +35,9 @@ namespace Containers
     {
         public string Id { get; set; }
         public string Protocol { get; set; }
-        public IList<EndSimple> Ends { get; set; }
+        public IList<ConnectionConTroller.LrmDestination> Ends { get; set; }
         public string Domain { get; set; }
-        public SimpleConnection(string id, string protocol, IList<EndSimple> ends, string domain )
+        public SimpleConnection(string id, string protocol, IList<ConnectionConTroller.LrmDestination> ends, string domain )
         {
             this.Id = id;
             this.Ends = ends;

@@ -31,7 +31,7 @@ namespace ConnectionConTroller
                 foreach (var config in configs.configs)
                 {
                     CommunicatonModule cm = new CommunicatonModule(config);
-                    ccs[a] = new CC(config.name, cm);
+                    ccs[a] = new CC(config.name, cm,config.domain);
                     a++;
                         
                               
@@ -56,14 +56,13 @@ namespace ConnectionConTroller
     }
 
 }
-    namespace CCConf { 
-
+    namespace CCConf {
+   public enum typ { sub,peer};
     [XmlRoot("CC")]
     public  class CC_configs
     {
         [XmlElement("CC_config", Type = typeof(CCConfig))]
         public CCConfig[] configs { get; set; }
-
 
         public CC_configs()
         {
@@ -73,21 +72,13 @@ namespace ConnectionConTroller
         [Serializable]
         public class CCConfig
         {
-            /*<name>CC_1</name>
-	<address>127.0.0.1</address>
-	<port_CC_peer_in>2000</port_CC_peer_in>
-	<port_CC_peer_out>2001</port_CC_peer_out>
-	<port_CC_root_in>2003</port_CC_root_in>
-	<port_CC_root_out>2010,2011</port_CC_root_out>
-	<port_LRM_out>2005</port_LRM_out>
-	<port_RC_out>2006</port_RC_out>
-	<port_NCC_in>2007</port_NCC_in>
-	<buffer_size>10000</buffer_size>*/
+       
             [XmlElement("name")]
             public string name { get; set; }
             [XmlElement("address")]
             public string address { get; set; }
-            
+            [XmlElement("domain")]
+            public string domain { get; set; }
 
              [XmlElement("port_CC_peer_in")]
              public int portPeerIn { get; set; }
@@ -109,7 +100,40 @@ namespace ConnectionConTroller
              public int portNccIn { get; set; }
              [XmlElement("buffer_size")]
              public int buffer_size { get; set; }
-             public CCConfig() { }
+
+             [XmlElement("domains", Type = typeof(Domain))]
+             public Domain[] domains { get; set; }
+  
+
+            [Serializable]
+            public class Domain
+            {[XmlAttribute]
+                public int CC_port { get; set; }
+                [XmlAttribute]
+                public string domain { get; set; }
+               [XmlAttribute]
+               public typ type { get; set; }
+
+                
+                public Domain() { }
+
+
+                public static Domain FromXmlString(string xmlString)
+                {
+                    var reader = new StringReader(xmlString);
+                    var serializer = new XmlSerializer(typeof(Domain));
+                    var instance1 = (Domain)serializer.Deserialize(reader);
+
+                    return instance1;
+                }
+            }
+           
+
+
+
+
+
+            public CCConfig() { }
              /*public CCConfig(string name,string address,int port,int buffer_size)
              {
                  this.name=name;
@@ -133,4 +157,5 @@ namespace ConnectionConTroller
 
 
     }
+    
 }

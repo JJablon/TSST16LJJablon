@@ -32,11 +32,12 @@ namespace ConnectionConTroller
                 listeners_run = true;
             }
         }
-        public CC(string name, CommunicatonModule cm)
+        public CC(string name, CommunicatonModule cm,string domain)
         {
             this.name = name;
             this.cm = cm;
             this.cm.name = name;
+            this.Domain = domain;
             cm.ConnectionRequest += new ConnectionRequestHandler(connReq);
             cm.PeerCoordination += new PeerCoordinationHandler(peerCoord);
             cm.NCCConnectionRequest += new NCCConnectionRequestHandler(nCCConnReq);
@@ -49,7 +50,6 @@ namespace ConnectionConTroller
         public void SendLinkConnectionRequest()
         {
             cm.LRMLinkConnectionRequest();
-
 
         }
 
@@ -109,8 +109,8 @@ namespace ConnectionConTroller
         {
             //ConsoleLogger.PrintConnectionRequest(request);
             NetworkConnection actual = new NetworkConnection();
-                actual.End1 = new EndSimple(request.Src.node, request.Src.port);
-                actual.End2 = new EndSimple(request.Dst.node, request.Dst.port);
+            actual.End1 = request.Src;
+            actual.End2 = request.Dst;
                 actual.AllSteps = new List<ConnectionStep>();
             
 
@@ -132,10 +132,10 @@ namespace ConnectionConTroller
                 actual.PeerCoordination =  (TcpCommunication.IListenerEndpoint) socket;
             }
 
-            List<EndSimple> ends = new List<EndSimple>();
+            List<LrmDestination> ends = new List<LrmDestination>();
 
-            ends.Add(new EndSimple(request.Src.node, request.Src.port));
-            ends.Add(new EndSimple(request.Dst.node, request.Dst.port));
+            ends.Add(actual.End1);
+            ends.Add(actual.End2);
 
 
             Containers.SimpleConnection sc = new Containers.SimpleConnection(actual.Id, "route", ends, this.Domain);
@@ -145,7 +145,7 @@ namespace ConnectionConTroller
         }
         private string GenerateConnectionId(HigherLevelConnectionRequest request)
         {
-            return request.Src.node+ request.Src.port + request.Dst.node + request.Dst.port;
+            return request.Src.Name+ request.Src.Port + request.Dst.Name + request.Dst.Port;
         }
 
         private void CallTeardown(HigherLevelConnectionRequest request)
