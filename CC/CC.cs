@@ -92,16 +92,25 @@ namespace ConnectionConTroller
 
             foreach(string lrm in a)
             {
-                foreach(var b in this.cm.lrms)
+                try
                 {
-                    if (b.Value.ContainsKey(lrm))
+                    foreach (var b in this.cm.lrms)
                     {
-                        
+                        if (b.Value.ContainsKey(lrm))
+                        {
 
 
+
+                        }
                     }
                 }
+                catch(Exception)
+                {
 
+
+
+
+                }
 
 
             }
