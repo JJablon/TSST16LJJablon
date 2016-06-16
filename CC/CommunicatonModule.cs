@@ -53,7 +53,7 @@ namespace ConnectionConTroller
             this.content = content;
         }
     }
-
+    
     public delegate void ConnectionRequestHandler(object sender, SocketEventArgs e);
     public delegate void PeerCoordinationHandler(object sender, SocketEventArgs e);
     public delegate void NCCConnectionRequestHandler(object sender, SocketEventArgs e);
@@ -65,7 +65,7 @@ namespace ConnectionConTroller
     public class CommunicatonModule
     {
 
-
+        public Dictionary<string, Dictionary<string,int>> lrms;
         Thread LRMThread;
         protected virtual void OnConnectionRequest(SocketEventArgs e)
         {
@@ -133,10 +133,22 @@ namespace ConnectionConTroller
 
             prepareListeners(config);
             prepareClients(config);
-      
+            this.lrms = new Dictionary<string, Dictionary<string, int>>();
+            foreach (var a in config.lrms)
+            {
+                if (!lrms.ContainsKey(a.name))
+                {
+                    lrms.Add(a.name, new Dictionary<string, int>());
+                    lrms[a.name].Add(a.LRM_name,a.LRM_port);
 
-           
+                }
+                else
+                {
+                    lrms[a.name].Add(a.LRM_name,a.LRM_port);
 
+                }
+
+            }
         }
         
 
@@ -299,11 +311,11 @@ namespace ConnectionConTroller
 
             rcOut.endpoint.AssignConnectionLostListener((object o) =>
             {
-                if (DEBUG) Write("CLIENT: Utraciłem połączenie z LRM", true);
+                if (DEBUG) Write("CLIENT: Utraciłem połączenie z RC", true);
             });
             rcOut.endpoint.AssignConnectionRemotlyClosedListener((object o) =>
             {
-                if (DEBUG) Write("CLIENT: Połączenie z LRM zostało zamknięte przez LRM, to wszystko przez LRM!", true);
+                if (DEBUG) Write("CLIENT: Połączenie z LRM zostało zamknięte przez RC, to wszystko przez RC!", true);
             });
             rcOut.endpoint.AssignDataReceivedListener((object sende, string content) =>
             {
@@ -351,7 +363,13 @@ namespace ConnectionConTroller
             LRMThread.Start();
         }
 
+        public void RouteQuery(RouteQueryRequest r)
+        {
+            string message = JsonConvert.SerializeObject(r);
+            ((TcpCommunication.IClientEndpoint)(rcOut)).Send(message);
 
+
+        }
       /*  private void ListenForIncoming1()
         {
             listeners[0].Listen(cc_coop_address);

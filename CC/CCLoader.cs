@@ -56,6 +56,8 @@ namespace ConnectionConTroller
     }
 
 }
+
+
     namespace CCConf {
    public enum typ { sub,peer};
     [XmlRoot("CC")]
@@ -103,7 +105,10 @@ namespace ConnectionConTroller
 
              [XmlElement("domains", Type = typeof(Domain))]
              public Domain[] domains { get; set; }
-  
+
+            [XmlElement("node", Type = typeof(LRM_config))]
+            public LRM_config[] lrms  { get; set; }
+
 
             [Serializable]
             public class Domain
@@ -127,8 +132,28 @@ namespace ConnectionConTroller
                     return instance1;
                 }
             }
-           
+            [Serializable]
+            public class LRM_config
+            {
 
+                [XmlAttribute]
+                public int LRM_port { get; set; }
+                [XmlAttribute]
+                public string name { get; set; }
+                [XmlAttribute]
+                public string LRM_name { get; set; }
+
+
+            }
+           /*
+            *
+ * 
+	<node name = "node1" LRM_port="20000" LRM_name="LRM1"  /> 
+	<node name = "node2" LRM_port="20001" LRM_name="LRM2"  /> 
+	<node name = "node3" LRM_port="20002" LRM_name="LRM3"  /> 
+
+
+*/
 
 
 

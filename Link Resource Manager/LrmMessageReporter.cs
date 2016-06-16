@@ -141,8 +141,8 @@ namespace Link_Resource_Manager
             Console.WriteLine("SNP:");
             string snpMsg = 
                 string.Format("node: [{0}], port: [{1}], type: [{2}], vcIndex: [{3}]",
-                snp.node,
-                snp.port,
+                snp.Node,
+                snp.Port,
                 ResourcesType,
                 snp.VcIndex);
             Console.WriteLine("\t" + snpMsg);

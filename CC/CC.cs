@@ -5,6 +5,15 @@ using ControllProtocol.protocol;
 using Newtonsoft.Json;
 namespace ConnectionConTroller
 {
+    public class RouteQueryRequest
+    {
+        public List<EndSimple> Ends { get; set; }
+    }
+    public class RouteQueryResponse
+    {
+        public List<EndSimple> Ends { get; set; }
+        public List<List<SNP>> Snpp { get; set; }
+    }
     public class CC
     {
         const bool DEBUG = true;
@@ -65,7 +74,7 @@ namespace ConnectionConTroller
                 int a = 0;
                 
                 foreach (var end in response.SnpPair) 
-                    Console.WriteLine("KONCOWKA nr. "+ ++a +": domena: " + end.Domain+ " węzeł " + end.node + " port : " + end.port + " indexparent: " + end.ParentVcIndex + " indexkonteneru: " + end.VcIndex);
+                    Console.WriteLine("KONCOWKA nr. "+ ++a +": domena: " + end.Domain+ " węzeł " + end.Node + " port : " + end.Port + " indexparent: " + end.ParentVcIndex + " indexkonteneru: " + end.VcIndex);
 
               }
            catch (Exception err )
@@ -76,13 +85,41 @@ namespace ConnectionConTroller
 
         private void routeTableQuery(object sender, SocketEventArgs e)
         {
-            throw new NotImplementedException();
+
+            RouteQueryResponse resp = JsonConvert.DeserializeObject<RouteQueryResponse>(e.content.ToString());
+            RC_CC_TEST.LrmResolver lrmres = new RC_CC_TEST.LrmResolver();
+            List<String> a =  lrmres.GetLrmNamesFromPath(resp.Snpp);
+
+            foreach(string lrm in a)
+            {
+                foreach(var b in this.cm.lrms)
+                {
+                    if (b.Value.ContainsKey(lrm))
+                    {
+                        
+
+
+                    }
+                }
+
+
+
+            }
+
+
+
+
+
+
+
+
+
         }
       
         private void nCCConnReq(object sender, SocketEventArgs e)
         {
-            //Console.WriteLine(e.content);
-            HigherLevelConnectionRequest request = ((HigherLevelConnectionRequest)(e.content));
+         
+            HigherLevelConnectionRequest request = JsonConvert.DeserializeObject<HigherLevelConnectionRequest>(e.content.ToString());
 
             try
             {
@@ -132,17 +169,17 @@ namespace ConnectionConTroller
                 actual.PeerCoordination =  (TcpCommunication.IListenerEndpoint) socket;
             }
 
-            List<LrmDestination> ends = new List<LrmDestination>();
+            List<EndSimple> ends = new List<EndSimple>();
 
-            ends.Add(actual.End1);
-            ends.Add(actual.End2);
+            ends.Add(new EndSimple(request.Src.Name,Int32.Parse(request.Src.Port)));
+            ends.Add(new EndSimple(request.Src.Name, Int32.Parse(request.Src.Port)));
+
+            RouteQueryRequest rq = new RouteQueryRequest();
+            rq.Ends =ends;
+            this.cm.RouteQuery(rq);
+              }
 
 
-            Containers.SimpleConnection sc = new Containers.SimpleConnection(actual.Id, "route", ends, this.Domain);
-           
-           // ConsoleLogger.PrintRouteTableQuery(sc);
-            //RcSender.SendToRc(JsonConvert.SerializeObject(sc));            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    TODO
-        }
         private string GenerateConnectionId(HigherLevelConnectionRequest request)
         {
             return request.Src.Name+ request.Src.Port + request.Dst.Name + request.Dst.Port;

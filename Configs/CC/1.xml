@@ -18,6 +18,20 @@
 	<domains CC_port="10010" domain="domain2" type="peer"/> 
 	<domains CC_port="10011" domain="domain3" type="peer"/>
 	<domains CC_port="10012" domain="domain4" type="peer"/>
+
+
+	
+	<node name="node1" LRM_port="20000" LRM_name="LRM1"  /> 
+	<node name="node1" LRM_port="20001" LRM_name="LRM2"  /> 
+	<node name="node1" LRM_port="20002" LRM_name="LRM3"  /> 
+
+
+	
+	<node name="node2" LRM_port="20005" LRM_name="LRM4"  /> 
+	<node name="node2" LRM_port="20006" LRM_name="LRM5"  /> 
+	<node name="node2" LRM_port="20007" LRM_name="LRM6"  /> 
+
+
 </CC_config>
   
 </CC>

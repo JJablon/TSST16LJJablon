@@ -42,7 +42,7 @@ namespace ConnectionConTroller
 
                 foreach (var end in lcr.SnpPair)
                 {
-                    sender.Write("\t \t węzeł: " + end.node + " ,port: " + end.port + " ,domena: " + end.Domain + " ,parentVC: " + end.ParentVcIndex + ", indexVC: " + end.VcIndex);
+                    sender.Write("\t \t węzeł: " + end.Node + " ,port: " + end.Port + " ,domena: " + end.Domain + " ,parentVC: " + end.ParentVcIndex + ", indexVC: " + end.VcIndex);
                 }
                 obj = lcr;
 
@@ -57,7 +57,7 @@ namespace ConnectionConTroller
 
                 foreach (var end in lcr.SnpPair)
                 {
-                    sender.Write("\t \t węzeł: " + end.node + " ,port: " + end.port + " ,domena: " + end.Domain + " ,parentVC: " + end.ParentVcIndex + ", indexVC: " + end.VcIndex);
+                    sender.Write("\t \t węzeł: " + end.Node + " ,port: " + end.Port + " ,domena: " + end.Domain + " ,parentVC: " + end.ParentVcIndex + ", indexVC: " + end.VcIndex);
                 }
                 obj = lcr;
 
@@ -97,7 +97,7 @@ namespace ConnectionConTroller
                         sender.Write("\tŻĄDANIE: CONN REQUEST, końce: ");
                         foreach (var end in cr.Ends)
                         {
-                            sender.Write("\t \t węzeł: " + end.node + " ,port: " + end.port + " ,domena: " + end.Domain + " ,parentindex: " + end.ParentVcIndex + ", indexVC: " + end.VcIndex);
+                            sender.Write("\t \t węzeł: " + end.Node + " ,port: " + end.Port + " ,domena: " + end.Domain + " ,parentindex: " + end.ParentVcIndex + ", indexVC: " + end.VcIndex);
                         }
                         obj = cr;
                                                                     /*
@@ -157,9 +157,9 @@ namespace ConnectionConTroller
                     default:
                     try
                     {
-                        HigherLevelConnectionRequest request = JsonConvert.DeserializeObject<HigherLevelConnectionRequest>(data);
-                        return request;
-
+                        // HigherLevelConnectionRequest request = JsonConvert.DeserializeObject<HigherLevelConnectionRequest>(data);
+                        // return request;
+                        return data;
                     }
                     catch (Exception) {
                         // sender.Write("nieznane polecenie: " + protocol);

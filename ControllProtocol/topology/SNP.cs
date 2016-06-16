@@ -14,8 +14,8 @@ namespace ControllProtocol.topology
         public SNP(string node, int port, string domain, string type, int vcIindex)
             : base(node, port)
         {
-            this.node = node; 
-            this.port = port; 
+            this.Node = node; 
+            this.Port = port; 
             this.Domain = domain;
             this.VcIndex = vcIindex;
         }
