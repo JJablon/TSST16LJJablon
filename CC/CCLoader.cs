@@ -92,7 +92,7 @@ namespace ConnectionConTroller
              public int portRootIn { get; set; }
 
              [XmlElement("port_CC_root_out")]
-             public string portRootOut { get; set; }
+             public int portRootOut { get; set; }
 
              [XmlElement("port_LRM_out")]
              public int portLrmOut { get; set; }
@@ -142,7 +142,8 @@ namespace ConnectionConTroller
                 public string name { get; set; }
                 [XmlAttribute]
                 public string LRM_name { get; set; }
-
+                [XmlAttribute]
+                public int command_port { get; set; }
 
             }
            /*

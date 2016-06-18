@@ -90,6 +90,10 @@
       <Project>{cd31b299-73f2-4d17-a914-453c114a24a6}</Project>
       <Name>Link Resource Manager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LRM_CC_TEST\LRM_CC_TEST.csproj">
+      <Project>{dc9e528a-8437-4432-8149-d5e75f43b0b0}</Project>
+      <Name>LRM_CC_TEST</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RC_CC_TEST\RC_CC_TEST.csproj">
       <Project>{3411e4ca-4fe2-479f-9fcb-3daf47ca0078}</Project>
       <Name>RC_CC_TEST</Name>

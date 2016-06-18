@@ -6,30 +6,29 @@
 	<port_CC_peer_in>2000</port_CC_peer_in>
 	<port_CC_peer_out>2001</port_CC_peer_out>
 	<port_CC_root_in>2003</port_CC_root_in>
-	<port_CC_root_out>2010</port_CC_root_out>   <!-- - wiele! - -->
+	<port_CC_root_out>2010</port_CC_root_out>  
 	<port_LRM_out>5000</port_LRM_out>
 	<port_RC_out>2006</port_RC_out>
 	<port_NCC_in>2007</port_NCC_in>
 	<buffer_size>10000</buffer_size>
 	
 	<domains CC_port="10000" domain="domain3" type="sub" /> 
-	<domains CC_port="10001" domain="domain3" type="sub" />
-	<domains CC_port="10002" domain="domain4" type="sub" />
-	<domains CC_port="10010" domain="domain2" type="peer"/> 
-	<domains CC_port="10011" domain="domain3" type="peer"/>
-	<domains CC_port="10012" domain="domain4" type="peer"/>
+	<domains CC_port="10001" domain="domain4" type="sub" />
+	<domains CC_port="10002" domain="domain5" type="sub" />
+	<domains CC_port="10010" domain="domain6" type="peer"/> 
 
-
-	
-	<node name="node1" LRM_port="20000" LRM_name="LRM1"  /> 
-	<node name="node1" LRM_port="20001" LRM_name="LRM2"  /> 
-	<node name="node1" LRM_port="20002" LRM_name="LRM3"  /> 
 
 
 	
-	<node name="node2" LRM_port="20005" LRM_name="LRM4"  /> 
-	<node name="node2" LRM_port="20006" LRM_name="LRM5"  /> 
-	<node name="node2" LRM_port="20007" LRM_name="LRM6"  /> 
+	<node name="node1" LRM_port="20000" LRM_name="LRM1" command_port="21000"  /> 
+	<node name="node1" LRM_port="20001" LRM_name="LRM2" command_port="21001" /> 
+	<node name="node1" LRM_port="20002" LRM_name="LRM3" command_port="21002" /> 
+
+
+	
+	<node name="node2" LRM_port="20005" LRM_name="LRM4" command_port="21003" /> 
+	<node name="node2" LRM_port="20006" LRM_name="LRM5" command_port="21004" /> 
+	<node name="node2" LRM_port="20007" LRM_name="LRM6" command_port="21005" /> 
 
 
 </CC_config>

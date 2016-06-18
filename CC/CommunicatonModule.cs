@@ -66,12 +66,8 @@ namespace ConnectionConTroller
     {
 
         public Dictionary<string, Dictionary<string,int>> lrms;
+        public Dictionary<string, int> nodes;
         Thread LRMThread;
-        protected virtual void OnConnectionRequest(SocketEventArgs e)
-        {
-            if (ConnectionRequest != null)
-                ConnectionRequest(this, e);
-        }
         protected virtual void OnPeerCoordination(SocketEventArgs e)
         {
             if (PeerCoordination != null)
@@ -99,7 +95,7 @@ namespace ConnectionConTroller
         public static readonly bool DEBUG = true;
 
         
-        public event ConnectionRequestHandler ConnectionRequest;
+      
         public event PeerCoordinationHandler PeerCoordination;
         public event NCCConnectionRequestHandler NCCConnectionRequest;
 
@@ -110,7 +106,7 @@ namespace ConnectionConTroller
 
         IConnectionFactory factory;
 
-        Dictionary<string, EndpointAddressPair> rootOut = new Dictionary<string, EndpointAddressPair>();
+
         EndpointAddressPair rootIn; //listener
 
         EndpointAddressPair peerIn; //listener
@@ -118,15 +114,25 @@ namespace ConnectionConTroller
 
         EndpointAddressPair peerOut;
         EndpointAddressPair lrmOut;
-        EndpointAddressPair rcOut; 
+        EndpointAddressPair rcOut;
+        EndpointAddressPair rootOut;
+
+        public Dictionary<string,bool> domainsIsSubdomain;
+        public Dictionary<string, int> domainsCCports;
+        Dictionary< int,TcpCommunication.IClientEndpoint> peers;
 
 
+        public Dictionary<string, EndpointAddressPair> LRMS;
         public string name;
         private string address;
         private int buffer_size;
         private bool clients_initialised = false;
         public CommunicatonModule(CC_configs.CCConfig config)
         {
+            LRMS = new Dictionary<string,EndpointAddressPair>();
+            nodes = new Dictionary<string, int>();
+             domainsIsSubdomain= new Dictionary<string, bool>();
+            domainsCCports= new  Dictionary<string, int>();
             this.buffer_size = config.buffer_size;
             this.address = config.address;
             factory = new TcpCommunication.Impl.TcpNetImp.TcpConnectionFactory(buffer_size);
@@ -134,6 +140,23 @@ namespace ConnectionConTroller
             prepareListeners(config);
             prepareClients(config);
             this.lrms = new Dictionary<string, Dictionary<string, int>>();
+            foreach(var domain in config.domains)
+            {
+                if(domain.type == "peer")
+                {
+                    domainsIsSubdomain.Add(domain.domain, false);
+                    domainsCCports.Add(domain.domain, domain.CC_port);
+                    peerOut = new EndpointAddressPair(factory.PrepareClientConnectionEndpoint(), factory.GetAddress(config.address, config.portPeerOut));
+                }
+                else
+                {
+                    domainsIsSubdomain.Add(domain.domain, true);
+                    domainsCCports.Add(domain.domain, domain.CC_port);
+                }
+
+
+
+            }
             foreach (var a in config.lrms)
             {
                 if (!lrms.ContainsKey(a.name))
@@ -147,7 +170,8 @@ namespace ConnectionConTroller
                     lrms[a.name].Add(a.LRM_name,a.LRM_port);
 
                 }
-
+                LRMS.Add(a.LRM_name,new EndpointAddressPair(factory.PrepareClientConnectionEndpoint(), factory.GetAddress("127.0.0.1", a.LRM_port)));
+                nodes.Add(a.name, a.command_port);
             }
         }
         
@@ -178,6 +202,21 @@ namespace ConnectionConTroller
        
         }
 
+        internal void SendPeerCoordination(List<EndSimple> ends)
+        {
+            try
+            {
+                string message = JsonConvert.SerializeObject(ends);
+
+             ((TcpCommunication.IClientEndpoint)peerOut.endpoint).Send(message);
+
+            }
+            catch (Exception) {  }
+
+        }
+
+     
+
         private void prepareListeners(CC_configs.CCConfig config)
         {
             rootIn = new EndpointAddressPair(factory.PrepareListenerConnectionEndpoint(), factory.GetAddress(config.address, config.portRootIn));
@@ -200,7 +239,7 @@ namespace ConnectionConTroller
             {
 
                 object o = MessageResolver.Resolve(this, content, (TcpCommunication.IListenerEndpoint)sende);
-                OnConnectionRequest(new SocketEventArgs(rootIn.name, type.Query, o));
+                OnNCCConnectionRequest(new SocketEventArgs(rootIn.name, type.Query, o));
 
             });
 
@@ -265,8 +304,9 @@ namespace ConnectionConTroller
             peerOut = new EndpointAddressPair(factory.PrepareClientConnectionEndpoint(), factory.GetAddress(config.address, config.portPeerOut));
             lrmOut = new EndpointAddressPair(factory.PrepareClientConnectionEndpoint(), factory.GetAddress(config.address, config.portLrmOut));
             rcOut = new EndpointAddressPair(factory.PrepareClientConnectionEndpoint(), factory.GetAddress(config.address, config.portRcOut));
+            rootOut = new EndpointAddressPair(factory.PrepareClientConnectionEndpoint(), factory.GetAddress(config.address, config.portRootOut));
 
-            LRMThread = new Thread(new ThreadStart(RunLRMThread));
+            //LRMThread = new Thread(new ThreadStart(RunLRMThread));
 
 
             peerOut.endpoint.AssignConnectionLostListener((object o) =>
@@ -323,13 +363,30 @@ namespace ConnectionConTroller
                 OnRouteTableQuery(new SocketEventArgs(rcOut.name, type.Response, o));
             }
             );
-            
+
+
+
+
+            rootOut.endpoint.AssignConnectionLostListener((object o) =>
+            {
+                if (DEBUG) Write("CLIENT: Utraciłem połączenie z rootem", true);
+            });
+            rootOut.endpoint.AssignConnectionRemotlyClosedListener((object o) =>
+            {
+                if (DEBUG) Write("CLIENT: Połączenie z rootem zostało zamknięte przez roota", true);
+            });
+            rootOut.endpoint.AssignDataReceivedListener((object sende, string content) =>
+            {
+                ((TcpCommunication.IClientEndpoint)sende).Send("OK");
+            }
+            );
+
             clients_initialised = true;
         }
 
 
 
-        private void RunLRMThread()
+      /*  private void RunLRMThread()
         {
 
             Console.WriteLine("ALLOCATION");
@@ -344,7 +401,7 @@ namespace ConnectionConTroller
             string alloc = JsonConvert.SerializeObject(req);
 
             ((IClientEndpoint)(lrmOut.endpoint)).Send(alloc);
-        }
+        }*/
         public void RunClients()
         {
 
@@ -353,9 +410,12 @@ namespace ConnectionConTroller
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //((TcpCommunication.IClientEndpoint)(peerOut.endpoint)).Connect(peerOut.address);
             ((TcpCommunication.IClientEndpoint)(lrmOut.endpoint)).Connect(lrmOut.address);
-            //((TcpCommunication.IClientEndpoint)(rcOut.endpoint)).Connect(rcOut.address);
+            ((TcpCommunication.IClientEndpoint)(rcOut.endpoint)).Connect(rcOut.address);
 
-            
+            foreach(var a in LRMS)
+            {
+                ((TcpCommunication.IClientEndpoint)(a.Value.endpoint)).Connect(a.Value.address);
+            }
         }
 
         public void LRMLinkConnectionRequest()

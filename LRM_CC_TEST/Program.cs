@@ -32,12 +32,23 @@ namespace LRM_CC_TEST
 
             while (true)
             {
+                List<SNP> snpp = new List<SNP>();
+                
+                snpp.Add(new SNP("node1", 1, "domian1", "VC3", 0));
+                snpp.Add(new SNP("node1", 2, "domian1", "VC3", 1));
+                snpp.Add(new SNP("node3", 1, "domian1", "VC3", 2));
+                snpp.Add(new SNP("node3", 2, "domian1", "VC3", 2));
+                snpp.Add(new SNP("node4", 1, "domian1", "VC3", 2));
+                NodeConnectionRequestBuilder builder = new NodeConnectionRequestBuilder(3);
+                builder.Build(snpp);
+
+
                 Console.WriteLine("ALLOCATION");
                 Console.ReadLine();
                 LinkConnectionRequest req = new LinkConnectionRequest();
                 req.RequestId = "A1";
                 req.Protocol = "ALLOCATION";
-                List<SNP> snpp = new List<SNP>();
+                snpp = new List<SNP>();
                 snpp.Add(new SNP("node1", 1, "domian1", "VC3", 0));
                 snpp.Add(new SNP("node1", 1, "domian1", "VC3", 1));
                 snpp.Add(new SNP("node1", 1, "domian1", "VC3", 2));
@@ -60,6 +71,10 @@ namespace LRM_CC_TEST
                     string dealloc = JsonConvert.SerializeObject(dellocReq);
                     endpoint.Send(dealloc);
                 }
+
+
+                //TEST 
+                
             }
 
         }

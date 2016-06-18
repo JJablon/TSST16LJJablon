@@ -47,7 +47,6 @@ namespace ConnectionConTroller
             this.cm = cm;
             this.cm.name = name;
             this.Domain = domain;
-            cm.ConnectionRequest += new ConnectionRequestHandler(connReq);
             cm.PeerCoordination += new PeerCoordinationHandler(peerCoord);
             cm.NCCConnectionRequest += new NCCConnectionRequestHandler(nCCConnReq);
             cm.RouteTableQuery += new RouteTableQueryHandler(routeTableQuery);
@@ -65,7 +64,7 @@ namespace ConnectionConTroller
 
 
 
-        private void linkConnReq(object sender, SocketEventArgs e)
+        private void linkConnReq(object sender, SocketEventArgs e) //reakcja na przyjście linkconnectionRequest
         {
             Console.WriteLine("Odpowiedź od LRM (styk link conn req) :");
             Containers.LinkConnectionRequestResponse response = ((Containers.LinkConnectionRequestResponse)(e.content));
@@ -83,39 +82,106 @@ namespace ConnectionConTroller
             }
         }
 
-        private void routeTableQuery(object sender, SocketEventArgs e)
+        private void routeTableQuery(object sender, SocketEventArgs e) //reakcja na przyjście routeTableQuery
         {
 
             RouteQueryResponse resp = JsonConvert.DeserializeObject<RouteQueryResponse>(e.content.ToString());
-            RC_CC_TEST.LrmResolver lrmres = new RC_CC_TEST.LrmResolver();
-            List<String> a =  lrmres.GetLrmNamesFromPath(resp.Snpp);
 
-            foreach(string lrm in a)
-            {
-                try
+
+
+
+            #region wysłanie linkconnectionrequest
+
+            RC_CC_TEST.LrmResolver lrmres = new RC_CC_TEST.LrmResolver();
+            List<string> lrmsFromPath =  lrmres.GetLrmNamesFromPath(resp.Snpp);
+            int counter = 0;
+            foreach (string lrm in lrmsFromPath) {
+                foreach (var node in cm.lrms)
                 {
+                    if (node.Value.ContainsKey(lrm)) {
+                        LinkConnectionRequest req = new LinkConnectionRequest();
+                        req.RequestId = "A1";
+                        req.Protocol = "ALLOCATION";
+                        req.Snpp = resp.Snpp[counter++];
+                        string alloc = JsonConvert.SerializeObject(req);
+                        ((TcpCommunication.IClientEndpoint)cm.LRMS[lrm].endpoint).Send(alloc);
+                    }
+                 }
+                counter++;
+            }
+
+            #endregion
+
+            #region wysłanie informacji do węzłów
+
+            LRM_CC_TEST.NodeConnectionRequestBuilder builder = new LRM_CC_TEST.NodeConnectionRequestBuilder(lrmsFromPath.Count);
+            List<LRM_CC_TEST.ConnectionRequestsResult> crr = new List<LRM_CC_TEST.ConnectionRequestsResult>();
+            foreach (var i in resp.Snpp)
+            crr.Add(builder.Build(i));
+            
+            foreach (string lrm in lrmsFromPath)
+            {
                     foreach (var b in this.cm.lrms)
                     {
                         if (b.Value.ContainsKey(lrm))
                         {
+                            foreach(var r in crr)
+                            {
+                                foreach(var q in r.ConnectionRequests)
+                                if(lrm == q.Key)
+                                    {
+                                        if (cm.LRMS.ContainsKey(lrm))
+                                        {
+                                            ((TcpCommunication.IClientEndpoint)cm.LRMS[lrm].endpoint).Send(q.Value);
+                                        }
+                                        
 
+                                    }
+                            }
 
 
                         }
                     }
-                }
-                catch(Exception)
-                {
-
-
-
-
-                }
-
 
             }
 
+            #endregion
 
+
+
+
+
+
+            #region wysłanie peer coordination/connreq
+
+            if (last_hlcr.Dst.Domena == this.Domain) //domena docelowa jest w naszej sieci
+            {
+                //nie trzeba wysylac requestow
+            }
+            else //trzeba wysłać peer requesty
+            {
+       
+                
+                foreach (var keyValuepPair in cm.domainsIsSubdomain)
+                {
+                    if (keyValuepPair.Value == false) // domena jest peerem
+                    { 
+                        cm.SendPeerCoordination(resp.Ends);
+                        
+                    }
+                    else //domena jest poddomeną - wysyłamy conn req out
+                    {
+                        HigherLevelConnectionRequest hlcr = new HigherLevelConnectionRequest();
+
+                        //poszukiwanie innych domen
+                        
+                    }
+
+                }
+
+            }
+
+            #endregion
 
 
 
@@ -124,19 +190,20 @@ namespace ConnectionConTroller
 
 
         }
-      
+        private HigherLevelConnectionRequest last_hlcr;
         private void nCCConnReq(object sender, SocketEventArgs e)
         {
          
             HigherLevelConnectionRequest request = JsonConvert.DeserializeObject<HigherLevelConnectionRequest>(e.content.ToString());
-
+            last_hlcr = request;
+         
             try
             {
                 switch (request.Type)
                 {
                     case "connection-request":
                         {
-                            NccConnectionRequest(request,sender);
+                            NccConnectionRequestFunctionProcessingTheRequestAndStartingActualCommunnicationBySendingTheRouteQueryRequest(request,sender);
                             return;
                         }
                     case "call-teardown":
@@ -151,7 +218,7 @@ namespace ConnectionConTroller
                 Console.WriteLine(ex);
             }
         }
-        private void NccConnectionRequest(HigherLevelConnectionRequest request,object socket)
+        private void NccConnectionRequestFunctionProcessingTheRequestAndStartingActualCommunnicationBySendingTheRouteQueryRequest(HigherLevelConnectionRequest request,object socket)
         {
             //ConsoleLogger.PrintConnectionRequest(request);
             NetworkConnection actual = new NetworkConnection();
@@ -214,13 +281,17 @@ namespace ConnectionConTroller
 
         private void peerCoord(object sender, SocketEventArgs e)
         {
-            throw new NotImplementedException();
+
+            List<EndSimple> ends = JsonConvert.DeserializeObject<List<EndSimple>>(e.content.ToString());
+            RouteQueryRequest rtq = new RouteQueryRequest();
+            rtq.Ends = ends;
+            cm.RouteQuery(rtq);
+
+
+           ((TcpCommunication.IClientEndpoint)(sender)).Send("OK");
         }
 
-        private  void connReq (object sender, SocketEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+   
 
        
 
