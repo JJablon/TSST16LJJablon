@@ -2,44 +2,48 @@
 <links>
 	<server tcp="6000" buffer="10000" clientsNumber="100"/>	
 	<link>
-		<port tcp="3000" local="1" node="clientA" /> 
-		<port tcp="5000" local="1" node="node1" /> 
+		<port tcp="3000" local="1" node="client1.domain1.domain3" /> 
+		<port tcp="5041" local="2" node="node4.domain1.domain3" /> 
 	</link>
 	<link>
-		<port tcp="5001" local="2" node="node1" /> 
-		<port tcp="5010" local="1" node="node2" /> 
+		<port tcp="3010" local="1" node="client2.domain1" /> 
+		<port tcp="5023" local="4" node="node2.domain1" /> 
 	</link>
 	<link>
-		<port tcp="5002" local="3" node="node1" /> 
-		<port tcp="5030" local="1" node="node4" /> 
+		<port tcp="5040" local="1" node="node4.domain1.domain3" /> 
+		<port tcp="5031" local="2" node="node3.domain1" /> 
 	</link>
 	<link>
-		<port tcp="5011" local="2" node="node2" /> 
-		<port tcp="3010" local="1" node="clientB" /> 
+		<port tcp="5030" local="1" node="node3.domain1" /> 
+		<port tcp="5021" local="2" node="node2.domain1" /> 
 	</link>
 	<link>
-		<port tcp="3020" local="1" node="clientC" /> 
-		<port tcp="5021" local="2" node="node3" /> 
+		<port tcp="5022" local="3" node="node2.domain1" /> 
+		<port tcp="5010" local="1" node="node1.domain1" /> 
 	</link>
 	<link>
-		<port tcp="5012" local="3" node="node2" /> 
-		<port tcp="5020" local="1" node="node3" /> 
+		<port tcp="5011" local="2" node="node1.domain1" /> 
+		<port tcp="5032" local="3" node="node3.domain1" /> 
 	</link>
 	<link>
-		<port tcp="5013" local="4" node="node2" />
-		<port tcp="5031" local="2" node="node4" />
+		<port tcp="5020" local="1" node="node2.domain1" /> 
+		<port tcp="5052" local="3" node="node1.domain2" /> 
 	</link>
 	<link>
-		<port tcp="5032" local="3" node="node4" />
-		<port tcp="5022" local="3" node="node3" />
+		<port tcp="5050" local="1" node="node1.domain2" />
+		<port tcp="5061" local="2" node="node2.domain2" />
 	</link>
 	<link>
-		<port tcp="5033" local="4" node="node4" />
-		<port tcp="5040" local="1" node="node5" />
+		<port tcp="5060" local="1" node="node2.domain2" />
+		<port tcp="5070" local="1" node="node3.domain2" />
 	</link>
 	<link>
-		<port tcp="5041" local="2" node="node5" />
-		<port tcp="3030" local="1" node="clientD" />
+		<port tcp="5071" local="2" node="node3.domain2" />
+		<port tcp="3030" local="1" node="client1.domain2" />
+	</link>
+	<link>
+		<port tcp="5051" local="2" node="node1.domain2" />
+		<port tcp="5072" local="3" node="node3.domain2" />
 	</link>
 
 </links>

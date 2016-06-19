@@ -3,6 +3,7 @@ start cmd /c cloudStart.bat
 cd ..
 cd NetworkClient 
 start cmd /c startClient0-A.bat
+start cmd /c startClient1-B.bat
 start cmd /c startClient2-C.bat
 start cmd /c startClient3-D.bat
 cd ..
@@ -11,6 +12,10 @@ start cmd /c startNode0.bat
 start cmd /c startNode1.bat
 start cmd /c startNode2.bat
 start cmd /c startNode3.bat
+start cmd /c startNode4.bat
+start cmd /c startNode5.bat
+start cmd /c startNode6.bat
+start cmd /c startNode7.bat
 cd ..
 cd Management
 start cmd /c ManagementSDH.bat

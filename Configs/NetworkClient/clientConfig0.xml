@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <client>
   <port local="1" tcp="3000" stm="STM1"/>
-  <node name="clientA"/>
+  <node name="client1.domain1.domain3"/>
   <managment-port number ="9900"/>
   <cloud-server tcp="6000"/>
 </client>

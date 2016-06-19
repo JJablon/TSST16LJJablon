@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<node type="mux" number="6" name="node2.domain2">
+	<port local="1" tcp="5060" stm="STM1"/>
+	<port local="2" tcp="5061" stm="STM1"/>
+	<cloud-server tcp="6000"/>
+	<managment-port number="7006"/>
+</node>
